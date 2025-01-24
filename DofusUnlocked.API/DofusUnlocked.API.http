@@ -1,0 +1,6 @@
+@dofusunlocked_HostAddress = http://localhost:5240
+
+GET {{dofusunlocked_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
