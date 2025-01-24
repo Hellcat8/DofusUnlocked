@@ -1,0 +1,2 @@
+- Concepts de mots clés dans la description des sorts ou des effets (Téléfrag, Infecté...)
+- Ordre des effets (sort qui d'abord repousse de 2 cases, puis inflige X dommages...)
