@@ -19,9 +19,10 @@ public class SpellEffect
     public State? State { get; set; } // Navigation Property
 
     // Specific properties for each effect type
+    public int EffectOrder { get; set; } // when a spell has two effects (ex. pushback + damage), this will define which one is displayed first in the list of effects
     public int? MinValue { get; set; } // ex. min damage (>12< to 24 fire damage)
     public int? MaxValue { get; set; } // ex. max damage (12 to >24< fire damage)
     public int? Value { get; set; } // unique value, ex. +2 MP
-
+    public int? Duration { get; set; } // how many turns does the effect last? (ex. poisoned for 2 turns)
     
 }
