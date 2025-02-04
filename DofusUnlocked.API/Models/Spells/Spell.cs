@@ -3,6 +3,7 @@ public class Spell
     public int Id { get; set; } // Primary Key
     public required string Name { get; set; } // Spell name
     public required string Description { get; set; } // Spell Description
+    public required string ImgUrl { get; set; } // Spell image URL
     
     // CharacterClass relation
     public int CharacterClassId { get; set; } // FK to Character Class
