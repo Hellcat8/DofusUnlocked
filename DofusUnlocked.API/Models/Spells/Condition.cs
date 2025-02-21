@@ -1,3 +1,5 @@
+namespace DofusUnlocked.API.Models.Spells;
+
 public class Condition // ex. Condition: Ne possède pas l'état Pesanteur, Possède l'état Invulnérable etc.
 {
     public int Id { get; set; }

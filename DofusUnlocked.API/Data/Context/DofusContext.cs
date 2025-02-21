@@ -1,4 +1,8 @@
+using System.Collections.Immutable;
+using DofusUnlocked.API.Models.Spells;
 using Microsoft.EntityFrameworkCore;
+
+namespace DofusUnlocked.API.Data.Context;
 
 public class DofusContext : DbContext
 {
@@ -11,11 +15,35 @@ public class DofusContext : DbContext
     public DbSet<Condition> Conditions { get; set; }
     public DbSet<State> States { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        optionsBuilder.UseMySql(
-            "server=localhost;port=3306;user=root;database=DofusUnlockedProd",
-            ServerVersion.AutoDetect("server=localhost;port=3306;user=root;database=DofusUnlockedProd")
-        );
+        // Fluent API configuration
+        
+        // CharacterClass
+        modelBuilder.Entity<CharacterClass>()
+            .HasKey(c => c.Id);
+
+        modelBuilder.Entity<CharacterClass>()
+            .Property(c => c.Name)
+            .HasMaxLength(20)
+            .IsRequired();
+
+        modelBuilder.Entity<CharacterClass>()
+            .Property(c => c.ImgUrl)
+            .IsRequired();
+        
+        // Condition
+        modelBuilder.Entity<Condition>()
+            .HasKey(c => c.Id);
+        
+        modelBuilder.Entity<Condition>()
+            .Property(c => c.ConditionValue)
+            .IsRequired();
+
+        modelBuilder.Entity<Condition>()
+            .HasOne(c => c.State) // Une Condition a un Etat
+            .WithMany(s => s.Conditions) // Un Etat a plusieurs Conditions
+            .HasForeignKey(c => c.StateId) // Clé étrangère dans Conditions
+            .IsRequired();
     }
 }

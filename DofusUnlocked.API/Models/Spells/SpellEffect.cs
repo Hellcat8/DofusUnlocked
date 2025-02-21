@@ -1,3 +1,5 @@
+namespace DofusUnlocked.API.Models.Spells;
+
 public class SpellEffect
 {
     public int Id { get; set; } // Primary Key

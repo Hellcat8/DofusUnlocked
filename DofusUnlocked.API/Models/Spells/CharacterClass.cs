@@ -1,3 +1,5 @@
+namespace DofusUnlocked.API.Models.Spells;
+
 public class CharacterClass
 {
     public int Id { get; set; }

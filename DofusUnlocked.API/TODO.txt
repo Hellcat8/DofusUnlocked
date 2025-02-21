@@ -1,5 +1,11 @@
 
-- Configuration des champs de tables SQL via FluentAPI/Annotations (cf. Deepseek discussion)
+- Configuration des champs de tables SQL via FluentAPI/Annotations (cf. ChatGPT)
 
-Améliorations:
-- Concepts de mots clés dans la description des sorts ou des effets (Téléfrag, Infecté...)
+AMÉLIORATIONS:
+° Général:
+    - Concepts de mots clés dans la description des sorts ou des effets (Téléfrag, Infecté...)
+    
+° Base de données:
+    - Remplacer le user root par un utilisateur n'ayant accès qu'aux tables nécessaires
+    - Sécuriser la ConnectionString (chiffrer la configuration ou utiliser variable d'environnement, Azure Key Vault ou équivalent etc)
+
