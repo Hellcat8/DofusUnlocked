@@ -13,8 +13,9 @@ public class Spell
     
     // Spell to Spell relation (variants)
     public int? VariantSpellId { get; set; } // FK to Spell
-    public Spell? VariantSpell { get; set; } // Navigation Property
+    public Spell? VariantSpell { get; set; } // Navigation Property (from spell A to B)
+    public Spell? OriginalSpell { get; set; } // Inverse Navigation Property (from spell B to A)
     
     // SpellRanks relation
-    public ICollection<SpellRank> spellRanks{ get; set; } = new List<SpellRank>();
+    public ICollection<SpellRank> SpellRanks{ get; set; } = new List<SpellRank>();
 }

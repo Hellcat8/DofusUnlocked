@@ -1,5 +1,7 @@
 
-- Configuration des champs de tables SQL via FluentAPI/Annotations (cf. ChatGPT)
+- Créer API add/update/delete (pour l'histoire de l'inverse navigation property, voir conv Deepseek)
+- Créer FrontEnd pour interface d'administration (add/update/delete)
+- Créer FrontEnd client
 
 AMÉLIORATIONS:
 ° Général:
