@@ -6,9 +6,5 @@ namespace DofusUnlocked.API.Controllers;
 [Route("[controller]")]
 public class SpellController : Controller
 {
-    // GET
-    public IActionResult Index()
-    {
-        return View();
-    }
+    
 }

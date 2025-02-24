@@ -8,6 +8,7 @@ public interface IDamageTypeService
     Task<DamageType?> CreateDamageTypeAsync(DamageType damageType);
     Task<IEnumerable<DamageType>> GetAllDamageTypesAsync();
     Task<DamageType?> GetDamageTypeByIdAsync(int damageTypeId);
-    Task<DamageType?> UpdateDamageTypeAsync(DamageType damageType);
-    Task<bool> DeleteDamageTypeAsync(DamageType damageType);
+    Task<DamageType?> UpdateDamageTypeAsync(int id, DamageType damageType);
+    Task<bool> DeleteDamageTypeAsync(int id);
+    Task SaveAsync();
 }

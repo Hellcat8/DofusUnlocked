@@ -96,7 +96,7 @@ public class DofusContext : DbContext
 
         modelBuilder.Entity<Spell>()
             .HasOne(s => s.CharacterClass) // A Spell has 1 CharacterClass
-            .WithMany(c => c.Spells) // A CharacterClass has many Spells
+            .WithMany() // A CharacterClass has many Spells
             .HasForeignKey(s => s.CharacterClassId) // Foreign key in Spell
             .IsRequired();
 

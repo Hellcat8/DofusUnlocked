@@ -13,27 +13,32 @@ public class CharacterClassService : ICharacterClassService
         _repository = repository;
     }
 
-    public Task<CharacterClass?> CreateCharacterClassAsync(CharacterClass characterClass)
+    public async Task<CharacterClass?> CreateCharacterClassAsync(CharacterClass characterClass)
     {
-        throw new NotImplementedException();
+        return await _repository.CreateCharacterClassAsync(characterClass);
     }
 
-    public Task<IEnumerable<CharacterClass>> GetAllCharacterClassesAsync()
+    public async Task<IEnumerable<CharacterClass>> GetAllCharacterClassesAsync()
     {
-        throw new NotImplementedException();
+        return await _repository.GetAllCharacterClassesAsync();
     }
 
-    public Task<CharacterClass?> GetCharacterClassByIdAsync(int id)
+    public async Task<CharacterClass?> GetCharacterClassByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _repository.GetCharacterClassByIdAsync(id);
     }
 
-    public Task<CharacterClass?> UpdateCharacterClassAsync(CharacterClass characterClass)
+    public async Task<CharacterClass?> UpdateCharacterClassAsync(int id, CharacterClass characterClass)
     {
-        throw new NotImplementedException();
+        return await _repository.UpdateCharacterClassAsync(id, characterClass);
     }
 
-    public Task<bool> DeleteCharacterClassAsync(CharacterClass characterClass)
+    public async Task<bool> DeleteCharacterClassAsync(int id)
+    {
+        return await _repository.DeleteCharacterClassAsync(id);
+    }
+
+    public async Task SaveAsync()
     {
         throw new NotImplementedException();
     }

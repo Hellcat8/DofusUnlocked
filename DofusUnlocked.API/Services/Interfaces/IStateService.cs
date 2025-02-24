@@ -8,6 +8,7 @@ public interface IStateService
     Task<State?> CreateStateAsync(State state);
     Task<IEnumerable<State>> GetAllStatesAsync();
     Task<State?> GetStateByIdAsync(string id);
-    Task<State?> UpdateStateAsync(State state);
-    Task<bool> DeleteStateAsync(State state);
+    Task<State?> UpdateStateAsync(int id, State state);
+    Task<bool> DeleteStateAsync(int id);
+    Task SaveAsync();
 }

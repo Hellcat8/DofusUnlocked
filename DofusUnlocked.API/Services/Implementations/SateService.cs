@@ -13,27 +13,32 @@ public class SateService : IStateService
         _repository = repository;
     }
 
-    public Task<State?> CreateStateAsync(State state)
+    public async Task<State?> CreateStateAsync(State state)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<State>> GetAllStatesAsync()
+    public async Task<IEnumerable<State>> GetAllStatesAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<State?> GetStateByIdAsync(string id)
+    public async Task<State?> GetStateByIdAsync(string id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<State?> UpdateStateAsync(State state)
+    public async Task<State?> UpdateStateAsync(int id, State state)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteStateAsync(State state)
+    public async Task<bool> DeleteStateAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task SaveAsync()
     {
         throw new NotImplementedException();
     }

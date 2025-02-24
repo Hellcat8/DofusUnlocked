@@ -1,11 +1,13 @@
-
-- Créer API CharacterClass add/update/delete (pour l'histoire de l'inverse navigation property, voir conv Deepseek)
+- FIX ERROR: Update action doesn't work
+- Créer API CharacterClass add/update/delete (pour l'histoire de l'inverse navigation property de Spellvariant, voir conv Deepseek)
 - Créer FrontEnd pour interface d'administration (add/update/delete)
 - Créer FrontEnd client
 
 AMÉLIORATIONS:
 ° Général:
     - Ajouter DTO, remplacer classes Model (comme Spell) dans Services par DTOs (SpellDto) et ajouter _mapper dans constructeur Services
+    - Ajouter gestion des exceptions centralisée (middleware?)
+    - Meilleurs updates -> gestion de la concurrence et update uniquement les champs modifiés, pas toute l'entité d'un coup
     - Concepts de mots clés dans la description des sorts ou des effets (Téléfrag, Infecté...)
     
 ° Base de données:

@@ -15,73 +15,78 @@ public class SpellService : ISpellService
     }
     
     #region Spells
-    public Task<Spell?> CreateSpellAsync(Spell spell)
+    public async Task<Spell?> CreateSpellAsync(Spell spell)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<Spell>> GetAllByClassIdAsync(int id)
+    public async Task<IEnumerable<Spell>> GetAllByClassIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Spell?> GetSpellByIdAsync(int id)
+    public async Task<Spell?> GetSpellByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Spell?> UpdateSpellAsync(Spell spell)
+    public async Task<Spell?> UpdateSpellAsync(int id, Spell spell)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteSpellAsync(Spell spell)
+    public async Task<bool> DeleteSpellAsync(int id)
     {
         throw new NotImplementedException();
     }
     #endregion
 
     #region SpellRank
-    public Task<SpellRank?> CreateSpellRankAsync(SpellRank spellRank)
+    public async Task<SpellRank?> CreateSpellRankAsync(SpellRank spellRank)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<SpellRank>> GetAllSpellRanksBySpellIdAsync(int id)
+    public async Task<IEnumerable<SpellRank>> GetAllSpellRanksBySpellIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<SpellRank?> UpdateSpellRankAsync(SpellRank spellRank)
+    public async Task<SpellRank?> UpdateSpellRankAsync(int id, SpellRank spellRank)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteSpellRankAsync(SpellRank spellRank)
+    public async Task<bool> DeleteSpellRankAsync(int id)
     {
         throw new NotImplementedException();
     }
     #endregion
 
     #region SpellEffect
-    public Task<SpellEffect?> CreateSpellEffectAsync(SpellEffect spellEffect)
+    public async Task<SpellEffect?> CreateSpellEffectAsync(SpellEffect spellEffect)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<SpellEffect>> GetAllSpellEffectsBySpellRankIdAsync(int id)
+    public async Task<IEnumerable<SpellEffect>> GetAllSpellEffectsBySpellRankIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<SpellEffect?> UpdateSpellEffectAsync(SpellEffect spellEffect)
+    public async Task<SpellEffect?> UpdateSpellEffectAsync(int id, SpellEffect spellEffect)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteSpellEffectAsync(SpellEffect spellEffect)
+    public async Task<bool> DeleteSpellEffectAsync(int id)
     {
         throw new NotImplementedException();
     }
     #endregion
+    
+    public async Task SaveAsync()
+    {
+        throw new NotImplementedException();
+    }
 }

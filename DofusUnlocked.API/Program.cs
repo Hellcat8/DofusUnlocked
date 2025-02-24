@@ -1,4 +1,5 @@
 using DofusUnlocked.API.Data.Context;
+using DofusUnlocked.API.Data.Repositories.Implementations;
 using DofusUnlocked.API.Data.Repositories.Interfaces;
 using DofusUnlocked.API.Models.Spells;
 using DofusUnlocked.API.Services.Implementations;
@@ -7,15 +8,18 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.SuppressAsyncSuffixInActionNames = false;
+} );
 
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Services
-builder.Services.AddScoped<ICharacterClassRepository, ICharacterClassRepository>();
+builder.Services.AddScoped<ICharacterClassRepository, CharacterClassRepository>();
 builder.Services.AddScoped<ICharacterClassService, CharacterClassService>();
 
 // Database

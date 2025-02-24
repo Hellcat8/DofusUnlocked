@@ -13,22 +13,27 @@ public class ConditionRepository : IConditionRepository
         _context = context;
     }
 
-    public Task<Condition?> CreateConditionAsync(Condition condition)
+    public async Task<Condition?> CreateConditionAsync(Condition condition)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Condition?> GetConditionByIdAsync(int id)
+    public async Task<Condition?> GetConditionByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Condition?> UpdateConditionAsync(Condition condition)
+    public async Task<Condition?> UpdateConditionAsync(int id, Condition condition)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteConditionAsync(Condition condition)
+    public async Task<bool> DeleteConditionAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task SaveAsync()
     {
         throw new NotImplementedException();
     }

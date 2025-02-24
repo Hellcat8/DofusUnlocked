@@ -13,27 +13,32 @@ public class DamageTypeRepository : IDamageTypeRepository
         this._context = context;
     }
 
-    public Task<DamageType?> CreateDamageTypeAsync(DamageType damageType)
+    public async Task<DamageType?> CreateDamageTypeAsync(DamageType damageType)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<DamageType>> GetAllDamageTypesAsync()
+    public async Task<IEnumerable<DamageType>> GetAllDamageTypesAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<DamageType?> GetDamageTypeByIdAsync(int damageTypeId)
+    public async Task<DamageType?> GetDamageTypeByIdAsync(int damageTypeId)
     {
         throw new NotImplementedException();
     }
 
-    public Task<DamageType?> UpdateDamageTypeAsync(DamageType damageType)
+    public async Task<DamageType?> UpdateDamageTypeAsync(int id, DamageType damageType)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteDamageTypeAsync(DamageType damageType)
+    public async Task<bool> DeleteDamageTypeAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task SaveAsync()
     {
         throw new NotImplementedException();
     }

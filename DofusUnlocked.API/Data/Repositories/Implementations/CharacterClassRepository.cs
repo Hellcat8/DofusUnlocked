@@ -1,6 +1,8 @@
 using DofusUnlocked.API.Data.Context;
 using DofusUnlocked.API.Data.Repositories.Interfaces;
 using DofusUnlocked.API.Models.Spells;
+using Microsoft.EntityFrameworkCore;
+using Exception = System.Exception;
 
 namespace DofusUnlocked.API.Data.Repositories.Implementations;
 
@@ -13,28 +15,85 @@ public class CharacterClassRepository : ICharacterClassRepository
         _context = context;
     }
 
-    public Task<CharacterClass?> CreateCharacterClassAsync(CharacterClass characterClass)
+    public async Task<CharacterClass?> CreateCharacterClassAsync(CharacterClass characterClass)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var createdClass = await _context.CharacterClasses.AddAsync(characterClass);
+            await SaveAsync();
+            return createdClass.Entity;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return null;
+        }
     }
 
-    public Task<IEnumerable<CharacterClass>> GetAllCharacterClassesAsync()
+    public async Task<IEnumerable<CharacterClass>> GetAllCharacterClassesAsync()
     {
-        throw new NotImplementedException();
+        try
+        {
+            return await _context.CharacterClasses.ToListAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return Enumerable.Empty<CharacterClass>();
+        }
     }
 
-    public Task<CharacterClass?> GetCharacterClassByIdAsync(int id)
+    public async Task<CharacterClass?> GetCharacterClassByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var characterClass = await _context.CharacterClasses.FindAsync(id);
+            return characterClass;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return null;
+        }
     }
 
-    public Task<CharacterClass?> UpdateCharacterClassAsync(CharacterClass characterClass)
+    public async Task<CharacterClass?> UpdateCharacterClassAsync(int id, CharacterClass characterClass)
     {
-        throw new NotImplementedException();
+        // _context.Entry(characterClass).State = EntityState.Modified;
+        
+        try
+        {
+            // _context.CharacterClasses.Update(characterClass);
+            await SaveAsync();
+            return characterClass;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return null;
+        }
     }
 
-    public Task<bool> DeleteCharacterClassAsync(CharacterClass characterClass)
+    public async Task<bool> DeleteCharacterClassAsync(int id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var characterClass = await _context.CharacterClasses.FindAsync(id);
+            if (characterClass is null) return false;
+
+            _context.CharacterClasses.Remove(characterClass);
+            await SaveAsync();
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return false;
+        }
+    }
+
+    public async Task SaveAsync()
+    {
+        await _context.SaveChangesAsync();
     }
 }
