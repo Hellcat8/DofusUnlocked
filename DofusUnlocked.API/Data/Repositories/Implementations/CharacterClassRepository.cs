@@ -57,15 +57,18 @@ public class CharacterClassRepository : ICharacterClassRepository
         }
     }
 
-    public async Task<CharacterClass?> UpdateCharacterClassAsync(int id, CharacterClass characterClass)
+    public async Task<CharacterClass?> UpdateCharacterClassAsync(int id, CharacterClass updatedClass)
     {
-        // _context.Entry(characterClass).State = EntityState.Modified;
+        var existingClass = await _context.CharacterClasses.FindAsync(id);
+        if (existingClass is null) return null;
+        
+        existingClass.Name = updatedClass.Name;
+        existingClass.ImgUrl = updatedClass.ImgUrl;
         
         try
         {
-            // _context.CharacterClasses.Update(characterClass);
             await SaveAsync();
-            return characterClass;
+            return existingClass;
         }
         catch (Exception e)
         {
