@@ -1,6 +1,6 @@
-- FIX ERROR: Update action doesn't work
-- Créer API CharacterClass add/update/delete (pour l'histoire de l'inverse navigation property de Spellvariant, voir conv Deepseek)
+- Créer projet Angular (latest version node.js, angular, tailwind, daisyUI)
 - Créer FrontEnd pour interface d'administration (add/update/delete)
+- Créer API Spells add/update/delete (pour l'histoire de l'inverse navigation property de Spellvariant, voir conv Deepseek)
 - Créer FrontEnd client
 
 AMÉLIORATIONS:
